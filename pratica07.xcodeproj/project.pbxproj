@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		127CFAE22B28E93E005D3A72 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CFAE12B28E93E005D3A72 /* FormView.swift */; };
 		1285F84F2B28DB3100A09A3A /* pratica07App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285F84E2B28DB3100A09A3A /* pratica07App.swift */; };
 		1285F8512B28DB3100A09A3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1285F8502B28DB3100A09A3A /* Persistence.swift */; };
 		1285F8542B28DB3100A09A3A /* pratica07.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1285F8522B28DB3100A09A3A /* pratica07.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127CFAE12B28E93E005D3A72 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		1285F84B2B28DB3100A09A3A /* pratica07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pratica07.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1285F84E2B28DB3100A09A3A /* pratica07App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pratica07App.swift; sourceTree = "<group>"; };
 		1285F8502B28DB3100A09A3A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				1285F8592B28DB3500A09A3A /* pratica07.entitlements */,
 				1285F8522B28DB3100A09A3A /* pratica07.xcdatamodeld */,
 				1285F85A2B28DB3500A09A3A /* Preview Content */,
+				127CFAE12B28E93E005D3A72 /* FormView.swift */,
 			);
 			path = pratica07;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				1285F84F2B28DB3100A09A3A /* pratica07App.swift in Sources */,
 				1285F8512B28DB3100A09A3A /* Persistence.swift in Sources */,
+				127CFAE22B28E93E005D3A72 /* FormView.swift in Sources */,
 				1285F8562B28DB3100A09A3A /* ContentView.swift in Sources */,
 				1285F8542B28DB3100A09A3A /* pratica07.xcdatamodeld in Sources */,
 			);
