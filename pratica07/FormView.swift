@@ -15,45 +15,45 @@ struct FormView: View {
     @Environment(\.presentationMode) var presentation
     
     var carro: Carro?
-    init(carro: Carro) {
-        self.carro = carro
-        self.ano = self.carro!.ano
-        self.nome = self.carro!.nome!
-        self.modelo = self.carro!.modelo!
-        print("Entrando aqui")
-    }
-    
-    init () {print("CONSTRUCTOR VAZIO")}
+ 
     
     var body: some View {
-        formulario
-            .navigationTitle("Formulário")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem{
-                    Button("Salvar") {
-                        if (self.carro != nil) {
+        VStack{
+            formulario
+                .navigationTitle("Formulário")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem{
+                        Button("Salvar") {
+                            if (self.carro != nil) {
+                                self.carro?.nome = self.nome
+                                self.carro?.modelo = self.modelo
+                                self.carro?.ano = self.ano
+                            }
+                            else {
+                                let carro = Carro(context: viewContext)
+                                carro.nome = self.nome
+                                carro.modelo = self.modelo
+                                carro.ano = self.ano
+                                print("salvando")
+                            }
                             
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                // Replace this implementation with code to handle the error appropriately.
+                                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                                let nsError = error as NSError
+                                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                            }
+                            self.presentation.wrappedValue.dismiss()
                         }
-                        else {
-                            let carro = Carro(context: viewContext)
-                            carro.nome = self.nome
-                            carro.modelo = self.modelo
-                            carro.ano = self.ano
-                            print("salvando")
-                        }
-                            
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            // Replace this implementation with code to handle the error appropriately.
-                            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                            let nsError = error as NSError
-                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                     }
-                    self.presentation.wrappedValue.dismiss()
                 }
-            }
+        }.onAppear() {
+            self.ano = self.carro?.ano ?? 0
+            self.modelo = self.carro?.modelo ?? ""
+            self.nome = self.carro?.nome ?? ""
         }
     }
 }
